@@ -7,6 +7,7 @@ body {
     justify-content: center;
 }
 
+/*circles solar system*/
 .line1, .line2, .line3, .line4, .line5, .line6, .sunFire, .sunGlobe {
     display: flex;
     align-items: center;
@@ -19,7 +20,7 @@ body {
 .line1 {
     width: 500px;
     height: 500px;
-    animation: rotate 60s infinite ease-in;
+    animation: rotate 60s infinite linear;
 }
 
 .line2 {
@@ -46,14 +47,16 @@ body {
     width: 190px;
     height: 190px;
 }
+/*circles solar system*/
 
+/*sun*/
 .sunFire {
     width: 130px;
     height: 130px;
     background-color: #FFB13C;
     border-radius: 100%;
     border: none;
-    animation: sunshine 5s infinite;
+    animation: sunshine 3s infinite alternate;
 }
 
 .sunGlobe {
@@ -63,12 +66,14 @@ body {
     border-radius: 100%;
     border: none;
 }
+/*sun*/
 
+/*planets*/
 .line1:before, .line2:before, .line2:after, .line3:before, .line4:before, .line4:after, .line5:before, .line5:after, .line6:before {
     content: '';
     position: absolute;
     border-radius: 100%;
-    animation: up-down 2s infinite;
+    animation: up-down .8s infinite alternate;
 }
 
 .line1:before {
@@ -140,7 +145,6 @@ body {
     border-radius: 100%;
     top: -5px;
     left: 40px;
-    animation: up-down 2s infinite;
     animation-delay: 1s;
 }
 
@@ -153,18 +157,15 @@ body {
     border-radius: 100%;
     bottom: 15px;
     left: 15px;
-    animation: up-down 2s infinite;
 }
+/*planets*/
 
 @keyframes up-down {
     0% {
         transform: translateY(0px);
     }
-    50% {
-        transform: translateY(3px);
-    }
     100% {
-        transform: translateY(0);
+        transform: translateY(3px);
     }
 }
 
@@ -173,14 +174,9 @@ body {
         box-shadow: 0 0 50px 10px #ff9e27;
         transform: scale(1);
     }
-    50% {
+    100% {
         box-shadow: 0 0 150px 50px #ff9e27;
         transform: scale(1.05);
-    }
-    100% {
-        box-shadow: 0 0 50px 10px #ff9e27;
-        transform: scale(1);
-
     }
 }
 
